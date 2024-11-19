@@ -1,38 +1,183 @@
 .App {
   text-align: center;
+  font-weight: bold;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  font-size: xx-large;
+  text-align: center;
+  background-color: rgb(0, 0, 0, 0.6);
+  color: white;
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: yellowgreen;
+  padding: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 5px;
+  padding: 5px;
+  border: 1px outset black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.instructions {
+  padding: 30px;
+}
+
+.dnd-context {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.draggables {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.draggable {
+  background-color: rgb(169, 169, 169, 0.8);
+}
+
+.draggable, .droppable {
+  font-size: 13.5px;
+  padding: 2px;
+  width: 130px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid black;
+  text-align: center;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.droppables {
+  color: white;
+  display: flex;
+  flex-direction: column; 
+}
+
+.droppable {
+  background-color: rgb(0, 0, 0, 0.6);
+}
+
+/* team backgrounds */
+
+.team-name {
+  text-align: center;
+  -webkit-text-stroke-width: 0.7px;
+  -webkit-text-stroke-color: red;
+}
+
+.no-team, .Aberdeen, .Celtic, .Dundee, .Dundee.United, .Hearts, .Hibs,
+.Kilmarnock, .Motherwell, .Rangers, .Ross.County, .St.Johnstone,
+.St.Mirren {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: scroll;
+}
+
+.no-team{
+  background-color: yellow;
+}
+
+.Aberdeen {
+  background-color: rgb(219,26,33);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Celtic {
+  background-image: linear-gradient(0deg, 
+  rgb(8, 138, 94) 25%, #ffffff 25%, 
+  #ffffff 51%, rgb(8, 138, 94) 51%, 
+  rgb(8, 138, 94) 75%, #ffffff 75%, 
+  #ffffff 100%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Celtic > .team-name {
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: yellowgreen;
+}
+
+.Dundee {
+  background-color: rgb(28,55,79);
+  color: white;
+}
+
+.Dundee.United {
+  background-color: rgb(255,75,3);
+}
+
+.Hearts {
+  background-color: rgb(105,27,50);
+  color: white;
+}
+
+.Hibs {
+  background-color: rgb(33,107,48);
+  color: white;
+}
+
+.Hibs > .team-name {
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: violet;
+}
+
+.Kilmarnock {
+  background-image: linear-gradient(90deg, #0e3df5 10%, #ffffff 10%,
+   #ffffff 20%, #0e3df5 20%, #0e3df5 30%, #ffffff 30%,
+   #ffffff 40%, #0e3df5 40%, #0e3df5 50%, #ffffff 50%,
+   #ffffff 60%, #0e3df5 60%, #0e3df5 70%, #ffffff 70%,
+   #ffffff 80%, #0e3df5 80%, #0e3df5 90%, #ffffff 90%,
+   #ffffff 100%);
+}
+
+.Motherwell {
+  background-color: rgb(255,181,2);
+  color: rgb(133,1,23);
+}
+
+.Rangers {
+  background-color: rgb(0,68,154);
+  color: white;
+}
+
+.Ross.County {
+  background-color: rgb(0,6,88);
+  color: white;
+}
+
+.St.Johnstone {
+  background-color: rgb(3,44,134);
+  color: white;
+}
+
+.St.Mirren {
+  background-image: linear-gradient(90deg, #000000 10%, #ffffff 10%,
+  #ffffff 20%, #000000 20%, #000000 30%, #ffffff 30%,
+  #ffffff 40%, #000000 40%, #000000 50%, #ffffff 50%,
+  #ffffff 60%, #000000 60%, #000000 70%, #ffffff 70%,
+  #ffffff 80%, #000000 80%, #000000 90%, #ffffff 90%,
+  #ffffff 100%);
+  color: white;
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: black;
+}
+
+.correct, .wrong{
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+.correct {
+  background-color: green;
+}
+.wrong {
+  background-color: red;
 }
